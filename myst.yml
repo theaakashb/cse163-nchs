@@ -58,6 +58,7 @@ project:
         - file: classwork/geospatial-data.ipynb
         - file: classwork/dissolve-join.ipynb
         - file: classwork/object-oriented-programming.ipynb
+        - file: classwork/efficiency/classwork-efficiency.ipynb
         - file: classwork/accessibility-simulations.ipynb
     - title: Homework
       children:
