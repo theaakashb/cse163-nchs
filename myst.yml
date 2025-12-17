@@ -59,6 +59,7 @@ project:
         - file: classwork/dissolve-join.ipynb
         - file: classwork/object-oriented-programming.ipynb
         - file: classwork/efficiency/classwork-efficiency.ipynb
+        - file: classwork/edge-detect-duckie/edge-detection-duckie.ipynb
         - file: classwork/accessibility-simulations.ipynb
     - title: Homework
       children:
