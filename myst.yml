@@ -25,6 +25,8 @@ project:
   toc:
     - file: README.md
     - file: style-guide.md
+    - file: tbd.md
+      hidden: true
     - title: Lectures
       children:
         - file: lectures/control-structures.ipynb
@@ -68,6 +70,17 @@ project:
         - file: homework/education.ipynb
         - file: homework/mapping.ipynb
         - file: homework/search.ipynb
+    - title: Final Project
+      file: project/index.md
+      children:
+        - title: Discovery
+          file: project/discovery.md
+          children:
+          - file: project/discovery_template.md
+          - file: project/discovery_dataset_sources.md
+          - file: project/discovery_tips.md
+          - file: project/discovery_challenges.md
+          - file: project/scraping.md
     - title: Extras
       children:
       - file: lectures/model-evaluation.ipynb
@@ -80,6 +93,7 @@ site:
   options:
     logo_text: Intermediate Data Programming
     style: style.css
+    folders: true
   actions:
     - title: Jupyter Lite
       url: https://nchs-cs.github.io/lite/lab/
