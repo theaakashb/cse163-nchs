@@ -97,3 +97,6 @@ site:
   actions:
     - title: Jupyter Lite
       url: https://nchs-cs.github.io/lite/lab/
+    - title: Report broken links
+      url: https://github.com/NCHS-CS/nchs-cs.github.io/issues
+      class: btn-outline
