@@ -22,7 +22,7 @@ To qualify, you must work with **four** or more datasets what require **merging*
 
 To qualify, you must successfully scrape hundreds of rows of data off one or more web page. Or, you must use some public API to collect data from some data service (e.g. Spotify). The resulting data would be saved as a CSV file for later organization and analysis. To Web Scrape, consider using [Beautiful Soup](https://www.crummy.com/software/BeautifulSoup/).
 
-See more info on web scraping [here](project/scraping)
+See more info on web scraping [here](/project/scraping)
 
 ## Statistical Validation
 
