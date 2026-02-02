@@ -25,14 +25,13 @@ We will follow the published schedule as close as possible for the duration of t
 
 | Week | Date | What |
 | --- | --- | --- |
-| 5 | Tues, Jan 27 | - |
-| 6 | Mon, Feb 2 | - |
+| 6 | Mon, Feb 2 | Project Kickoff |
 | 7 | Mon, Feb 9 | - |
 | 8 | Mon, Feb 16 | _Mid-winter break_ |
-| 9 | Mon, Feb 23 | `2/27` Discovery Doc Due |
+| 9 | Mon, Feb 23 | `2/23` Discovery Doc Due |
 | 10 | Mon, Mar 2 | - |
 | 11 | Mon, Mar 9 | - |
-| 12 | Mon, Mar 16 | `3/20` Data Organization Due |
+| 12 | Mon, Mar 16 | `3/16` Data Organization Due |
 | 13 | Mon, Mar 23 | - |
 | 14 | Mon, Mar 30 | - | 
 | 15 | Mon, Apr 6 | _Spring Break_ |

@@ -41,9 +41,14 @@ In one or two paragraphs, expand on your research questions by providing context
 
 ---
 
-### Schedule
+### Task List
 
-You will delivery your initial project schedule. Link to your schedule spreadsheet will go here. You must share or include the spreadsheet from your GitHub project.
+> Create your `task list` from [this template](https://docs.google.com/spreadsheets/d/1F2ba3ekH2hg-wLWOCXHkyzi8Q8jizi4QHmhfRdichcU/edit?usp=sharing) (You may modify but you should keep this as the minimum required information for a task list).
+
+Include your `task list` here. Include:
+
+> 1. A link to your schedule google sheet. 
+> 2. A markdown version of your schedule plan (you can convert the google sheet to markdown using this tool here: https://tabletomarkdown.com/convert-spreadsheet-to-markdown/)
 
 ---
 
