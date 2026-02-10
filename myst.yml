@@ -83,6 +83,7 @@ project:
           - file: project/discovery_challenges.md
           - file: project/scraping.md
         - file: project/project_examples.md
+        - file: project/rubric.md
     - title: Extras
       children:
       - file: lectures/model-evaluation.ipynb
