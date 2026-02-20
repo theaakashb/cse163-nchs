@@ -80,8 +80,9 @@ project:
           - file: project/discovery_template.md
           - file: project/discovery_dataset_sources.md
           - file: project/dataset_example.md
-          - file: project/discovery_challenges.md
-          - file: project/scraping.md
+        - file: project/data-organization.md
+        - file: project/discovery_challenges.md
+        - file: project/scraping.md
         - file: project/project_examples.md
         - file: project/rubric.md
     - title: Extras
