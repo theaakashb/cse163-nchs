@@ -135,6 +135,7 @@ This plot shows a scatter plot of data drawn with `plt.scatter`. It then finds t
 `linregress`. It plots it out, extending an extra 20 values on the x-axis, and it provides data on the
 graph itself. It shows what the slope and y-intercept are (m & b), gives the $R^2$ value, and lastly
 it presents the Mean Squared Error.  
+
 ![regplot](../static/bestfit_linregress.png)
 :::
 
@@ -199,6 +200,7 @@ the coefficients of a polynomial of degree 1 and 2.
 The graph shows many things: scatter plot of data, line of best fit, parabola of best fit,
 a legend, coefficients of the parabola of best fit, and MSE of both the parabola and line. Whew!  
 It shows that the parabola is a much better fit for the points.  
+
 ![regplot](../static/bestfit_polyfit.png)
 :::
 
@@ -430,6 +432,7 @@ it uses all the default values (10, 1, 0.2, 0, 0). This is why the title of the 
 
 The bottom plot is the same equation but with specific coefficients provided (15, 0.5, 0.1, 0, 10). It 
 shows how the coefficients impact the curve. Pay attention to the values on the y-axis.   
+
 ![regplot](../static/bestfit_curve_two.png)
 
 ### See Code
@@ -475,6 +478,7 @@ The inset shows how the actual arguments used when generating the points with no
 them against the coefficients for the curve of best fit. Here you can see that it slightly underestimated
 the amplitude. It was 0.15 off of the frequency, only 0.01 way from the rate of degradation, and only
 0.02 away from the offset. The phase was 6.56 off of the actual phase used.  
+
 ![regplot](../static/bestfit_curve_fit.png)
 :::
 

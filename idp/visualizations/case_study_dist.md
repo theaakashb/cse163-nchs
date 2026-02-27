@@ -37,6 +37,7 @@ This is a hypothetical research project on **contrived data**. This dataset was 
 A total of 1,866 people's responses were recorded.
 
 Here is a sample of the data. These are the people with the top 10 and bottom 10 distance values:  
+
 ![Distance Data](../static/visualizations-tab/case-study-on-distance/distance_data.jpg)  
 
 Note that our data is very "clean" and is not riddled with `NaN` or errors.
@@ -69,6 +70,7 @@ def sns_bar_stats(df, ci):
 
 :::{tab-item} Distance vs Sport
 The idea was to show how each sport compares against other sports by showing how many people were able to throw the ball at each specific distance. There are too many lines for one to make much sense of anything. Furthermore, the x-axis is mislabeled! It presents itself as the distance a person threw the ball, but in reality it represents a 'bin' (or a range of distances). There are 40 bins, each representing a range of 3. The graph makes it look like the x-axis is the actual distance thrown instead of a bin number.  
+
 ![Bar Chart](../static/visualizations-tab/case-study-on-distance/distance_v_sport_line.jpg)  
 
 > **See Data and Code**  
@@ -102,6 +104,7 @@ The idea was to show how each sport compares against other sports by showing how
 This plot isn’t *horrible* as it combines all three features into a single plot. The sports are identified by the color of the dots where we can clearly see that 'None' dominates the base of the plot. The age of the person is denoted by the size of the dots where it appears that the base of the plot is wider. If you squint, it kind of looks like two skinny spikes, sharper and redder at the top. It would mean that those who hadn’t done any sport at all and are older throw the shortest. Those who played baseball and are younger throw the farthest.   
 
 However, there are still many questions and issues. The spikes are far apart and don’t leverage the graphing space well. The colors are hard to discern from one another (e.g., perhaps XCountry folks throw the farthest). It doesn’t tell us how much farther one sport throws over another, the average distance, the variance, or many other interesting statistics about the data. The spikes are too skinny and compact to elucidate truly useful information.   
+
 ![Relplot by Gender, Sport and Age](../static/visualizations-tab/case-study-on-distance/dist_relplot_with_sport_age.jpg)  
 
 ```python
@@ -118,6 +121,7 @@ def scatter_plot(df):
 
 :::{tab-item} Stacked Bars
 This plot shows the count of people at various distances. We can see that the male gender has a curve that looks to be a 'normal distribution'. Stacked on top of the male gender is the female gender. The stacking of the bars allows us to get an idea of the distribution of the entire sample set, but it doesn’t allow us to see how the female gender is distributed.   
+
 ![Stacked Bar Chart](../static/visualizations-tab/case-study-on-distance/dist_stacked_bars.jpg)  
 
 ```python
@@ -134,6 +138,7 @@ def stacked_hist(df):
 
 :::{tab-item} Sports Histogram
 This plot turned out so bad that I didn’t even attempt to fix the fact that the x-axis labels are occluded, the y-axis ranges don’t match, the color of all the bars are blue (don’t differentiate themselves), and that there are gaps in the bars. It is just ugly and upon first inspection, I knew that I didn’t want to go any further with this plot. 
+
 ![Sport Histogram](../static/visualizations-tab/case-study-on-distance/dist_sport_hist.jpg) 
 
 To get the bars to line up uniformly, we explicitly set the bins using `range(0, 140, 3)`. We generated a new `DataFrame` called `df_buckets` and set the height of the bars to be the count of people within that bin. This is done for us using `np.histogram`. Then, we enumerated through each sport and plotted a histogram. We set the y-axis label on each axis so that we’d know which sport that subplot was presenting. 
@@ -227,6 +232,7 @@ The chart reveals that women are most likely to throw between 20-30 yards while 
 
 :::{tab-item} Swarm
 This plot provides a nice visual into the distribution of distance by gender. It gives more detail into how many people are at various distances. It reveals that men have a much broader spread of distances.
+
 ![Swarm Plot](../static/visualizations-tab/case-study-on-distance/dist_swarm.jpg) 
 ```python
 def swarm_plot(df):
@@ -248,6 +254,7 @@ Let’s see if we can learn how the sport impacts the distance thrown. We alread
 
 :::{tab-item} Pie Chart
 This pie chart shows how the sports compose both the male and female genders. We can see that more women do not affiliate with any sport at all, and that women are not a part of football.
+
 ![Sport Pie Chart by Gender](../static/visualizations-tab/case-study-on-distance/dist_pie_sport_both.png)  
 
 > **See Code**  
@@ -794,6 +801,7 @@ To simplify, we can fix $x_0 = 0$. The coefficients' impact the curve are as fol
 - $k$ = curve rate (how fast does the line approach the y-upper-limit)   
 
 Here is how these curves look on a graph:  
+
 ![Sigmoid Curves](../static/visualizations-tab/case-study-on-distance/dist_sigmoid.png)
 :::
 

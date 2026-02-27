@@ -61,6 +61,7 @@ def pos_neg_bar_chart(df):
 
 :::{tab-item} Data
 Here are the first few lines of data in the DataFrame.  
+
 ![Bar Chart](../static/inflation_data.jpg)
 :::
 
@@ -160,6 +161,7 @@ def add_value_labels(ax, values, fmt="{:.1f}", spacing=2):
 
 :::{tab-item} Data
 Here is the complete set of data in the DataFrame. Notice how the annotated values are not present in this initial dataframe. Instead, the plotting code calculates the "payback factor" and adds this column before plotting. 
+
 ![Bar Chart](../static/annotation_data.jpg)
 :::
 
@@ -213,6 +215,7 @@ def sorted_plt_bars(df):
 
 :::{tab-item} Data
 This is the first 11 rows of the **original** data (which was unsorted).  
+
 ![Bar Chart](../static/sorted_data.jpg)
 :::
 
@@ -389,6 +392,7 @@ def stacked_df_plot_kind(df):
 
 :::{tab-item} Data
 This is the first 11 rows of the **original** data (which was unsorted).  
+
 ![Bar Chart](../static/sorted_data.jpg)
 :::
 
@@ -413,6 +417,7 @@ Be sure to look at the data structure in each of these two examples.
 
 :::{tab-item} Image
 Note that this image is very, very similar to the `Seaborn` plot generated with the code used below. The differences are: The legend does not have a title, the color shades are slightly different, the legend is fully opaque, there are vertical grid lines. All of these are very subtle.   
+
 ![Bar Chart](../static/plt_side-by-side-bars.png)
 :::
 
@@ -444,6 +449,7 @@ def plot_side_by_side(df):
 
 :::{tab-item} Data
 This is the first 11 rows of the **original** data (which was unsorted).  
+
 ![Bar Chart](../static/sorted_data.jpg)
 :::
 
@@ -464,11 +470,13 @@ We can also use `Seaborn` to do this plot, but the data needs to be organized di
 
 :::{tab-item} Image
 Note that this image is very, very similar to the plot generated with `plt` above.    
+
 ![Bar Chart](../static/side-by-side-bars.png)
 :::
 
 :::{tab-item} Data
 This is the data after we `melt` the DataFrame to its new structure. The original data structure is shown in the `plt` example above.   
+
 ![Bar Chart](../static/bar_sns_melt_data.jpg)
 :::
 
@@ -541,6 +549,7 @@ def df_horiz_plot(df):
 
 :::{tab-item} Data
 This is the first 11 rows of the **original** data (which was unsorted).  
+
 ![Bar Chart](../static/sorted_data.jpg)
 :::
 
@@ -577,6 +586,7 @@ def hist_chart(df):
 
 :::{tab-item} Data
 This data is fake data generated for this coding example.  
+
 ![Bar Chart](../static/distance_data.jpg)
 :::
 
@@ -619,6 +629,7 @@ def sorted_bars(df):
 
 :::{tab-item} Data
 This is the first 11 rows of the **original** data (which was unsorted).  
+
 ![Bar Chart](../static/sorted_data.jpg)
 :::
 
@@ -655,6 +666,7 @@ def sns_bar_stats(df):
 
 :::{tab-item} Data
 This data is fake data generated for this coding example.  
+
 ![Bar Chart](../static/distance_data.jpg)
 :::
 

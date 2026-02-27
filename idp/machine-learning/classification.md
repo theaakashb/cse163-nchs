@@ -255,6 +255,7 @@ Here are the results when **gender** is removed. I find the results fascinating!
 How in the world does the model predict with 99.5% accuracy when we ignore **gender**, which has a *Feature Importance* of 40%?  
 
 What we see in the graph is that the model doesn't predict NBA until one is 80 inches tall. In this particular dataset, one woman happened to be that tall while 12 others in the WNBA were not that tall.  
+
 ![No Gender Model Results](../static/class_no_gender.png)    
 
 #### Discussion   
@@ -310,6 +311,7 @@ In this trial:
 - We let the `max_depth=6` for the Decision Tree.
 - We allowed gender to be considered.   
 You can see that there are very few small, green dots (representing True NBA players) that are incorrectly categorized. There are a few randomly scattered large, blue dots (representing predicted NBA players). These scattered dots reflect the model's attempt to learn and predict the inherent randomness in the data.  
+
 ![Random #1 Predictions](../static/class_nba_rand_results.png)
 
 > **OUTPUT**  
@@ -331,6 +333,7 @@ In this trial:
 - We let the `max_depth=3` for the Decision Tree; this is to reduce overfitting.
 - We allowed gender to be considered.   
 You can see that randomness in the prediction went away, which was expected since we set `max_depth=3`. What is unexpected though is that we still have ~98% accuracy, and the *Feature Importance* for **gender** dropped to zero!   
+
 ![Random #2 Predictions](../static/class_nba_rand_results_2.png)
 
 > **OUTPUT**  
@@ -352,6 +355,7 @@ In this trial:
 - We let the `max_depth=6` for the Decision Tree—we may overfit.
 - We allowed gender to be considered.   
 You can see that randomness in the prediction went away, which was **UN**expected since we set `max_depth=6`. We still have a high accuracy.  
+
 ![Random #3 Predictions](../static/class_nba_rand_results_3.png)
 
 > **OUTPUT**  
@@ -381,4 +385,5 @@ This output is generated from the `model_acc` code in the prior section. It is a
 > Feature: height, Importance: 100.00%
 
 This graphic shows that our tree is relatively simple. It shows that it always looks at height, and it predicts in the NBA in only 1 small case.  
+
 ![NBA Model](../static/fi_model_nba.png)

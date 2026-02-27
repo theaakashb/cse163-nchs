@@ -254,6 +254,28 @@ def rewrite_links(body: str) -> str:
     return re.sub(r"\]\(([^)]+)\)", _replace, body)
 
 
+def separate_block_images(body: str) -> str:
+    lines = body.split("\n")
+    out: list[str] = []
+
+    standalone_image = re.compile(r"!\[[^\]]*\]\([^)]+\)\s*$")
+
+    for line in lines:
+        stripped = line.strip()
+        if stripped.startswith("![") and standalone_image.fullmatch(stripped):
+            prev = out[-1] if out else ""
+            prev_stripped = prev.strip()
+            if (
+                prev_stripped
+                and not prev_stripped.startswith((":::", "```", "|", "-", "*", "+", ">", ":"))
+                and not re.match(r"^\d+\.\s", prev_stripped)
+            ):
+                out.append("")
+        out.append(line)
+
+    return "\n".join(out)
+
+
 def transform_markdown(text: str) -> str:
     front_matter, body = split_front_matter(text)
 
@@ -261,6 +283,7 @@ def transform_markdown(text: str) -> str:
     body = convert_tabs(body)
     body = convert_attribute_callouts(body)
     body = rewrite_links(body)
+    body = separate_block_images(body)
 
     title = front_matter.get("title", "")
     if title:

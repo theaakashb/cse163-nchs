@@ -11,6 +11,7 @@ Feedback loops can amplify biases present in training data. If a model makes bia
 
 ### Overfitting
 Positive feedback loops can lead to overfitting, where a model becomes overly specialized to the training data and performs poorly on new, unseen data. As the model makes predictions and receives reinforcement for correct outputs, it may start memorizing the training examples rather than learning generalizable patterns.
+
 ![Overfitting](../static/avoid_ml_overfitting.png)
 
 ### Algorithmic Polarization:

@@ -23,6 +23,7 @@ and perhaps we want to emphasize that California has the most by a long shot.
 :::{tab-item} Image
 One the left, we see what many students show--the full 50 states.  
 One the right, is a much improved image showing only the 48 contiguous states.  
+
 ![election image](../static/geo_demo_clip.jpg)
 :::
 
@@ -45,6 +46,7 @@ ax2.set_ylim(24, 50)
 
 :::{tab-item} Data
 This data is a merge of two different data sources: electoral_college.csv and a ShapeFile of the United States.  You'll note that in the code we were able to read column values `"707,558"` (a string with a literal comma as the thousands separator), by using the named parameter `thousands` in the `read_csv` call. Handy!! We also eliminated a duplicate column using `drop`.     
+
 ![election data](../static/geo_elect_data.jpg)
 ```python
 electoral = pd.read_csv('electoral_college.csv', thousands=',')
@@ -179,6 +181,7 @@ plot_votes(gdf)
 
 :::{tab-item} Data
 This data is a merge of two different data sources: electoral_college.csv and a ShapeFile of the United States.  You'll note that in the code we were able to read column values `"707,558"` (a string with a literal comma as the thousands separator), by using the named parameter `thousands` in the `read_csv` call. Handy!! We also eliminated a duplicate column using `drop`.     
+
 ![election data](../static/geo_elect_data.jpg)
 ```python
 electoral = pd.read_csv('electoral_college.csv', thousands=',')
@@ -262,6 +265,7 @@ plot_annotated_votes(gdf)
 
 :::{tab-item} Data
 This data is a merge of two different data sources: electoral_college.csv and a ShapeFile of the United States.  You'll note that in the code we were able to read column values `"707,558"` (a string with a literal comma as the thousands separator), by using the named parameter `thousands` in the `read_csv` call. Handy!! We also eliminated a duplicate column using `drop`.     
+
 ![election data](../static/geo_elect_data.jpg)
 ```python
 electoral = pd.read_csv('electoral_college.csv', thousands=',')
@@ -322,6 +326,7 @@ def plot_correlation(gdf):
 
 :::{tab-item} Data
 Same data as above.     
+
 ![election data](../static/geo_elect_data.jpg)
 :::
 
@@ -410,6 +415,7 @@ def plot_correlations(gdf):
 
 :::{tab-item} Data
 The values for A, B, and C are contrived. This is only the first 12 rows of the full set.      
+
 ![election data](../static/geo_abc_data.jpg)
 :::
 

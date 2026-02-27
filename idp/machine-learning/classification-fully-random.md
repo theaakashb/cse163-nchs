@@ -12,6 +12,7 @@ to see the data, code, and what we learned.
 
 :::{tab-item} Data
 The gender is `Male` 92% of the time and has no relationship to the features.  
+
 ![Random Data](../static/class_rand_data.png)  
 **Code used to generate the data**  
 ```python
@@ -69,6 +70,7 @@ plt.bar(x=['Score', 'Favorite'], height=importance)
 :::{tab-item} Model Graphic
 You'll see that the model is giant! We didn't constrain the model and it attempted to
 memorize the data. 
+
 ![Model Graphic](../static/fi_model_tree.png)  
 **Code Used to Generate the Graphic**  
 ```python

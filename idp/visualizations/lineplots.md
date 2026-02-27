@@ -39,6 +39,7 @@ You should read and become familiar with all the named arguments and options for
 
 The data is three years of temperature data from Snohomish county. This page will do some computations and data organization
 to enable better plots, but this is what the data basically looks like. We load it as a `TimeSeries` using `pd.read_csv`.    
+
 ![Temperature Data](../static/line_data.png)
 
 ## DataFrame
@@ -50,6 +51,7 @@ In this very simple, one line, `df.plot()`, we default to drawing all columns us
 for the y-axis and the x-axis ticks are rotated for us. The `Sunrise` and `Sunset` columns cause all the other data to be
 squashed down to the bottom due to the units being 24-hour time. Furthermore, the 24-hour time causes there to be "jumps"
 in the data because it will jump from 1059 to 1100 since 1075 is not a valid time. We will fix this below.  
+
 ![Default Plot](../static/line_default_df_plot.png)  
 ```python
 # This will plot all columns on the same axes so long as all the values
@@ -65,6 +67,7 @@ plt.title('Default Graph of a DataFrame')
 :::{tab-item} Multi-Line
 We can very easily plot a specific set of lines by providing a list of column names. This plot is identical
 to the plot shown in the "Min & Max" tab below.   
+
 ![Temperature Data](../static/line_min_max_temps.png)  
 ```python
 df.plot(y=['MinTemp', 'MaxTemp'], legend=False)
@@ -77,6 +80,7 @@ We can create a relatively complex figure with four subplots using one line of c
 a few things: figure size, columns to plot on `y`, line styles, grid lines turned on, and xlabel.  
 
 By providing just a few named arguments, we can get a pretty complex figure drawn in 1 line!  
+
 ![Subplots](../static/line_subplots.png)  
 ```python
 df.plot(figsize=(8,10),
@@ -311,6 +315,7 @@ Pivoted vs Unpivoted
 The _"pivot"_ format is where the data is simply organized by column. There is a column that contains the x-values,
 and there is a column that contains the y-values. In the data shown below, we would use the column `year` as the x-value,
 and the columns `investment` and/or `return` as the y-value to draw one or two lines.   
+
 ![Pivot Data](../static/annotation_data.jpg)  
 
 **UNPIVOTED**  
@@ -319,6 +324,7 @@ For example, in the data shown below, you might use the `DATE` column of the Dat
 the `value` column as the y-value and have different lines depending on the `source` column. In other words,
 You'd have one line for 'MaxTemp' and another line for 'AvgTemp'. In this example, the `source` column 
 contains the name of the line that the data belongs to.  
+
 ![Unpivoted Data](../static/line_unpivoted_data.png)  
 
 Here is code that shows how we can restructure the data from one format to the other.  
