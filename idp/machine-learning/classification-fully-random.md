@@ -8,7 +8,7 @@ In this example, we will attempt to predict ones gender from two other values. W
 make the predictions. We will be a little tricky in that the label will be completely random! Read through each tab
 to see the data, code, and what we learned.  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Data
 The gender is `Male` 92% of the time and has no relationship to the features.  
@@ -88,4 +88,4 @@ The sad thing is, this model could have predicted with 92% accuracy by always pr
 DecisionTreeClassifier was never the wiser (dare I say, DUMB!). 
 :::
 
-:::
+::::

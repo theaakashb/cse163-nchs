@@ -96,6 +96,9 @@ TOC_BLOCK = (
     "    # END IDP MIGRATION SECTIONS\n"
 )
 
+LEGACY_VISUAL_PREFIX = "idp/static/visualizations tab/case study on distance/"
+NORMALIZED_VISUAL_PREFIX = "idp/static/visualizations-tab/case-study-on-distance/"
+
 
 def split_front_matter(text: str) -> tuple[dict[str, str], str]:
     match = re.match(r"\A---\s*\n(.*?)\n---\s*\n?", text, flags=re.DOTALL)
@@ -122,7 +125,7 @@ def convert_tabs(body: str) -> str:
 
         match_tabs = re.fullmatch(r"\{%\s*tabs\s+([^\s%]+)\s*%\}", stripped)
         if match_tabs:
-            out.append(":::{tab-set}")
+            out.append("::::{tab-set}")
             continue
 
         match_tab = re.fullmatch(r"\{%\s*tab\s+([^\s%]+)\s+(.+?)\s*%\}", stripped)
@@ -136,7 +139,7 @@ def convert_tabs(body: str) -> str:
             continue
 
         if re.fullmatch(r"\{%\s*endtabs\s*%\}", stripped):
-            out.append(":::")
+            out.append("::::")
             continue
 
         out.append(line)
@@ -240,6 +243,10 @@ def rewrite_links(body: str) -> str:
             new_url = "./curve_of_best_fit"
         elif not re.match(r"^(https?://|mailto:|#)", url):
             new_url = unquote(new_url)
+            new_url = new_url.replace(
+                "../static/visualizations tab/case study on distance/",
+                "../static/visualizations-tab/case-study-on-distance/",
+            )
             new_url = re.sub(r"\.html(?=($|#|\?))", "", new_url)
 
         return f"]({new_url})"
@@ -279,6 +286,14 @@ def extract_static_assets(source_text: str, source_file: Path, old_root: Path) -
             continue
         assets.add(rel)
     return assets
+
+
+def destination_asset_variants(rel_asset: Path) -> list[Path]:
+    rel_text = rel_asset.as_posix()
+    variants = [rel_asset]
+    if rel_text.startswith(LEGACY_VISUAL_PREFIX):
+        variants.append(Path(rel_text.replace(LEGACY_VISUAL_PREFIX, NORMALIZED_VISUAL_PREFIX, 1)))
+    return variants
 
 
 def update_myst_toc(myst_path: Path) -> None:
@@ -327,9 +342,10 @@ def main() -> None:
 
     for rel_asset in sorted(copied_assets):
         src = old_root / rel_asset
-        dst = new_root / rel_asset
-        dst.parent.mkdir(parents=True, exist_ok=True)
-        shutil.copy2(src, dst)
+        for rel_dst in destination_asset_variants(rel_asset):
+            dst = new_root / rel_dst
+            dst.parent.mkdir(parents=True, exist_ok=True)
+            shutil.copy2(src, dst)
 
     update_myst_toc(new_root / "myst.yml")
 

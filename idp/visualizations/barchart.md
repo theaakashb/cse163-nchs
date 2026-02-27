@@ -32,7 +32,7 @@ There are a lot of different libraries and methods to create bar charts. Here is
 
 In this example bar chart you'll see that the positive values have green bars while the negative values have red bars. The example below only uses two colors to emphasize the direction of change. We use a bar chart here despite there being many different years to plot because the green/red colors emphasize the relative changes nicely.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/annual_change.png)
@@ -70,13 +70,13 @@ Here are the first few lines of data in the DataFrame.
 * The Title and y-axis labels use the phrase `Change in` meaning that the value is relative to the prior year. The chart does not plot the actual inflation rate of that year (which is almost always positive).    
 :::
 
-:::
+::::
 
 ## Overlayed Bars
 
 This is a bar chart that has the values overlayed one on top of the other. The values are NOT stacked. This means that the base of the tall bar is at the bottom: the top of the bar has a height as denoted on the y-axis. This example shows how to overlay bar charts as well as to annotate the bars with a values.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/annotated_bars.png)
@@ -171,13 +171,13 @@ Here is the complete set of data in the DataFrame. Notice how the annotated valu
 * The figure would be too narrow for our tastes, so we increase the figure size when calling `subplots`.  
 :::
 
-:::
+::::
 
 ## Sorted Bars
 
 Bar charts usually have an x-axis that doesn't have a natural sorting order. However, sorting by the height of the bars is a valuable way to present data and insight.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/sorted_bars.png)
@@ -223,13 +223,13 @@ This is the first 11 rows of the **original** data (which was unsorted).
 * The colors of the bars can be customized using the `color` named parameter. You can set all the bars to one identical color, or pass in a sequence of values such as `df['color']` (if you create a meaningful and correct color column in the dataframe).  
 :::
 
-:::
+::::
 
 ## Adjusted Y-Label
 
 Bar charts usually have the y-axis start at 0. You may want to adjust the y-label to accentuate the differences, or simply to provide different insight. There are 3 different plots here. First, we use `bottom` on the `plt.bar` API to adjust the y-axis. To get the bars to draw at the correct height, we must plot an adjusted column. In this plot we also explore how to arbitrarily label the y-axis. Second, we use the `plt.ylim` API and adjust the list of Rectangles used to place the labels in the center of the bars. We also choose to plot on the `Series` object, simply to demonstrate that it can be done. Third, we label on the `'edge'` which simplifies the code a bit. We also play around with different colors. Read the comments in the code to get more insight.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image 1
 ![Bar Chart](../static/bars_bottom.png)
@@ -352,13 +352,13 @@ def sorted_plt_bars(df):
 ```
 :::
 
-:::
+::::
 
 ## Stacked Bars
 
 Sometimes the addition of multiple values has meaning and you'll want to stack one bar on top of another. This allows you to see multiples values and their sum total. We still sort the bars by a specific value to provide some added insight.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/stacked_bars.png)
@@ -397,7 +397,7 @@ This is the first 11 rows of the **original** data (which was unsorted).
 * If the DataFrame has more columns, each column's value will be stacked into this bar chart. Here, we have only two columns that are not the index value.  
 :::
 
-:::
+::::
 
 ## Side-by-side Bars
 
@@ -409,7 +409,7 @@ Be sure to look at the data structure in each of these two examples.
 
 ### Using `plt`
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 Note that this image is very, very similar to the `Seaborn` plot generated with the code used below. The differences are: The legend does not have a title, the color shades are slightly different, the legend is fully opaque, there are vertical grid lines. All of these are very subtle.   
@@ -454,13 +454,13 @@ This is the first 11 rows of the **original** data (which was unsorted).
 * I found it interesting that my first attempt to limit the data to 10 rows worked without having used `reset_index`. I'm not sure how it worked originally, but I'm pretty sure that always using reset_index() will work. Also, there is an `inplace` named argument that we explicitly needed to have set to `False` (or not set to True). This assures that the reset_index() returns a new dataframe.  
 :::
 
-:::
+::::
 
 ### Using `seaborn`
 
 We can also use `Seaborn` to do this plot, but the data needs to be organized differently. We do a little extra work to get the data to look right, but sometimes our data starts off looking this way. Furthermore, it is really good to know about the method `pd.melt`. The resulting bar plot is virtually identical.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 Note that this image is very, very similar to the plot generated with `plt` above.    
@@ -508,13 +508,13 @@ def sns_side_by_side(df):
 * In this example, `plt.legend(['A Value', 'B Value'])` did not show the correct colors of the bars. To fix this, I needed to get the plot's `handles` from the `axis` object. Furthermore, I gave the legend a title.
 :::
 
-:::
+::::
 
 ## Horizontal Bar Chart
 
 If we want to plot our bars horizontally, we can leverage the `barh` method.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/horiz_bars.png)
@@ -553,13 +553,13 @@ This is the first 11 rows of the **original** data (which was unsorted).
   * ... and a bunch more ...
 :::
 
-:::
+::::
 
 ## Histogram
 
 Sometimes you want to know the number of times something occurs. A Histogram will allow you to do a bar plot that represents counts.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/distance_hist.jpg)
@@ -585,7 +585,7 @@ This data is fake data generated for this coding example.
 * In this plot, we've initialized `seaborn` so there is a white grid in the background established with `sns.set_style('whitegrid')`.     
 :::
 
-:::
+::::
 
 ## Seaborn Colorful Bar Chart
 
@@ -593,7 +593,7 @@ Seaborn has a wide variety of fancy charts and offers easy ways to view insightf
 1. Fancy colors and a different background  
 2. Statistical analysis when there are many values per category on the x-axis
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/seaborn_bars.png)
@@ -628,13 +628,13 @@ This is the first 11 rows of the **original** data (which was unsorted).
 * Note that there is only one data value for every State.  
 :::
 
-:::
+::::
 
 ## Seaborn Statistical Bar Chart
 
 There can be many values that fall in a specific category. In this example, we analyze how far people can throw a ball. We have 400 samples of people's distance and gender and we show a simple bar chart showing the difference.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Bar Chart](../static/sns_bar_stats.jpg)
@@ -667,4 +667,4 @@ This data is fake data generated for this coding example.
 * By default, the line would represent the confidence interval of the average in the data. This may sound strange because we can calculate the average of the data exactly. But, in the world of statistics, we acknowledge that our data is just a sample of the entire population and may not accurately reflect reality. The larger our sample, the more confidence we can have in the data. Seaborn uses something called [bootstrapping](https://www.thoughtco.com/what-is-bootstrapping-in-statistics-3126172).   
 :::
 
-:::
+::::

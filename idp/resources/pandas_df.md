@@ -110,7 +110,7 @@ Except for `loc` the API are `[inclusive : exclusive]`.
 | String List | `df[['C','D','words']]` | A list of column names |
 
 ### API Details
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} df
 * `df[]` takes a single argument only.  
@@ -228,11 +228,11 @@ d2 = df.take([1, 3, 0], axis=1) # returns a dataframe containing columns 1, 3, a
 * You can use **negative indices**. This works similarly to slicing in lists in base python, where _the -1 index corresponds to the last value of the set_.
 * `df.take([0])` returns the first (0 position) row.
 :::
-:::
+::::
 
 ### Examples
 
-:::{tab-set}
+::::{tab-set}
 :::{tab-item} Common
 df = ![Default Index](../static/df_slice_1.png)  
 
@@ -261,7 +261,7 @@ df = ![Default Index](../static/df_slice_1.png)
 |![Default Index](../static/df_slice_3.png)|![Default Index](../static/df_slice_3a.png)|`df[0:1]`<br>`df.loc['ax']`<br>`df.iloc[0:1]`<br>`df.take([0])`|  
 |  |![Default Index](../static/df_slice_3b.png)|`df[1:3]`<br>`df.loc['cat':'dog']`<br>`df.iloc[1:3]`<br>`df.take([1,2])`|
 :::
-:::
+::::
 
 #### Footnotes
 [1] **Vector** is intended to a data structure that can hold multiple values such as a list, slice, or array, even when these structures contain a single value.    

@@ -43,7 +43,7 @@ to enable better plots, but this is what the data basically looks like. We load 
 
 ## DataFrame
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Simple
 In this very simple, one line, `df.plot()`, we default to drawing all columns using the `index` as the x-axis. We see that by default, there is no label
@@ -86,11 +86,11 @@ df.plot(figsize=(8,10),
 ```
 :::
 
-:::
+::::
 
 ## Simple Plots
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Temperatures
 ![Default Plot](../static/line_temps_for_2021.png)  
@@ -142,7 +142,7 @@ plt.title('2 Weeks Max Temp in January 2020')
 ```
 :::
 
-:::
+::::
 
 ## Twinx Plots
 There are times when we want to plot two lines together but their units are dramatically different.
@@ -154,7 +154,7 @@ address it using `twinx`. [Online example](https://matplotlib.org/stable/gallery
 Let's plot the normal temperature (average temperature over many years)
 along with the the average current temperature and the amount of current precipitation.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} First Attempt
 ![Bad Precipitation](../static/line_rain_temps.png)  
@@ -241,7 +241,7 @@ plt.title('A Year of Rain & Temperatures')
 ```
 :::
 
-:::
+::::
 
 ### Another Twinx Example
 This example is nice because it annotates the daylight curve with the length of the day. 
@@ -252,7 +252,7 @@ The code takes a time-slice for a 12 month period. When finding the equinox poin
 we make use of Tuple packing and unpacking to combine two lines of code into one line. This is a bit
 of a trick and is a nice way to shorten highly similar code.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Temperature & Daylight](../static/line_temp_daylight.png) 
@@ -296,7 +296,7 @@ plt.title('Average Temp & Day Light\nSnohomish 2020-21')
 ```
 :::
 
-:::
+::::
 
 ## Seaborn
 I've found that using Seaborn is helpful in only a few situations.  

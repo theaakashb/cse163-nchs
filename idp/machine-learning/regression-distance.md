@@ -17,7 +17,7 @@ The graphs presented in the **Model Graphs** tab are most insightful. It provide
 
 Listing out the **Coefficients** and **Feature Importance** helps us understand what features are making the biggest impact on the predictions. But, again, the real value comes from the **Model Graphs**.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Data
 Please look at the [Distance Case Study](../visualizations/case_study_dist). 
@@ -214,4 +214,4 @@ def graph_dtr_predictions(features):
 ```
 :::
 
-:::
+::::

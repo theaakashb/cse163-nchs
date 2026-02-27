@@ -47,7 +47,7 @@ from sklearn.metrics import accuracy_score
 ## Coefficient Magnitudes (Linear Models)
 In linear regression and other linear models, the magnitude of the coefficients assigned to each feature gives an indication of its importance. Larger absolute coefficients imply stronger impact on the output variable.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Code
 
@@ -83,11 +83,11 @@ The following is how to interpret coefficient magnitudes for feature importance:
 
 :::
 
-:::
+::::
 
 ## Permutation Importance
 This is a technique used to measure the importance of features in a model by evaluating how much the model's performance drops when the values of a specific feature are randomly shuffled. The idea is that important features contribute significantly to the model's prediction, so shuffling their values would lead to drop in performance.
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Goal
 
@@ -126,7 +126,7 @@ for idx, score in enumerate(perm_importance.importances_mean):
 
 :::
 
-:::
+::::
 Remember that the larger the drop in performance after shuffling a feature, the more important that feature is. Permutation importance provides insights into the relative importance of features based on their impact on model performance.
 
 

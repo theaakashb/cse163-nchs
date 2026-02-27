@@ -74,7 +74,7 @@ which shows a line of best fit with a shaded area around the line representing
 a 95% confidence interval. None of that is horrible. It is convenient to have a line of best fit, 
 if there is one. And, `regplot` will draw one for you by default.  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Simple regplot
 ![regplot](../static/bestfit_simple_reg.png)  
@@ -124,11 +124,11 @@ sns.regplot(x_data, y_data, ci=None)
 ```
 :::
 
-:::
+::::
 
 ## SciPy Linregress
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Annotated Regression
 This plot shows a scatter plot of data drawn with `plt.scatter`. It then finds the line of best fit using
@@ -187,13 +187,13 @@ Example call:
 ```
 :::
 
-:::
+::::
 
 ## Numpy Polyfit  
 Here we use `np.polyfit` to find the best fit for a line and a parabola. Put another way,
 the coefficients of a polynomial of degree 1 and 2.  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Best Fit Plot
 The graph shows many things: scatter plot of data, line of best fit, parabola of best fit,
@@ -387,7 +387,7 @@ plt.show()
 ![numpy-correlation](../static/numpy-correlation.png)
 :::
 
-:::
+::::
 
 ## Curve Fit
 Here we see how we can find a curve of best fit to a custom, continuous curve: a logarithmically degrading, sinusoidal wave. 
@@ -419,7 +419,7 @@ with the initial guess. For example:
 coeffs, _ = curve_fit(logarithmic_sinusoidal_wave, x_data, y_data, p0=p0)
 ```
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Sinusoidal
 In our custom curve, we have coefficients for each of the following: amplitude, frequency, rate of logarithmic 
@@ -555,7 +555,7 @@ When we call `scatter` on the axis object, we set `s` to change the size of the 
 To add more value to the graph, we create an inset with text on the graph.  
 :::
 
-:::
+::::
 
 # ML regressions
 The study on distance using Machine Learning models is done on another page.  

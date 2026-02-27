@@ -85,6 +85,7 @@ project:
         - file: project/scraping.md
         - file: project/project_examples.md
         - file: project/rubric.md
+
     # BEGIN IDP MIGRATION SECTIONS
     - title: Machine Learning
       file: idp/machine-learning/index.md

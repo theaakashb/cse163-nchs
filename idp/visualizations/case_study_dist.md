@@ -37,7 +37,7 @@ This is a hypothetical research project on **contrived data**. This dataset was 
 A total of 1,866 people's responses were recorded.
 
 Here is a sample of the data. These are the people with the top 10 and bottom 10 distance values:  
-![Distance Data](../static/visualizations tab/case study on distance/distance_data.jpg)  
+![Distance Data](../static/visualizations-tab/case-study-on-distance/distance_data.jpg)  
 
 Note that our data is very "clean" and is not riddled with `NaN` or errors.
 
@@ -47,14 +47,14 @@ Note that our data is very "clean" and is not riddled with `NaN` or errors.
 
 Here are a set of common and essentially worthless graphs. A Final Report with only these plots in their report would be poor. These graphs are simple and not very insightful. Furthermore, one of the plots is mislabeled and misleading.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Average
 The most common question would be to see the average distance thrown by gender. Here is the basic bar plot of that data. The small 'tick' or 'bar' at the top represents a range showing 95% confidence that the 'true mean' is within the range of the black bar. It assumes that the data we have is a sample from the true population and that it isn’t 100% representative. With the count of data points present, the bar represents with 95% confidence where would the mean actually fall in the true population. 
 
 Is the bar helpful? [I think NOT!! (click for Video Reference)](https://youtu.be/a2xZrXzuwyk)  
 
-![Bar Chart](../static/visualizations tab/case study on distance/dist_bar_avg.jpg)  
+![Bar Chart](../static/visualizations-tab/case-study-on-distance/dist_bar_avg.jpg)  
 
 The default is to have `ci=95` or not defined at all. What you see below is 'sd' (St. Dev) is much better because we are not so focused on our confidence in the average so much as the variance in the distance.
 ```python
@@ -69,11 +69,11 @@ def sns_bar_stats(df, ci):
 
 :::{tab-item} Distance vs Sport
 The idea was to show how each sport compares against other sports by showing how many people were able to throw the ball at each specific distance. There are too many lines for one to make much sense of anything. Furthermore, the x-axis is mislabeled! It presents itself as the distance a person threw the ball, but in reality it represents a 'bin' (or a range of distances). There are 40 bins, each representing a range of 3. The graph makes it look like the x-axis is the actual distance thrown instead of a bin number.  
-![Bar Chart](../static/visualizations tab/case study on distance/distance_v_sport_line.jpg)  
+![Bar Chart](../static/visualizations-tab/case-study-on-distance/distance_v_sport_line.jpg)  
 
 > **See Data and Code**  
 > To understand the code a bit better, let's take a peek at what `df_buckets` looks like after it is created in the code below:  
-> ![Bucket Data](../static/visualizations tab/case study on distance/dist_sport_hist_data.jpg)  
+> ![Bucket Data](../static/visualizations-tab/case-study-on-distance/dist_sport_hist_data.jpg)  
 > ```python
 > def sport_hist(df):
 >     df_buckets = pd.DataFrame()
@@ -102,7 +102,7 @@ The idea was to show how each sport compares against other sports by showing how
 This plot isn’t *horrible* as it combines all three features into a single plot. The sports are identified by the color of the dots where we can clearly see that 'None' dominates the base of the plot. The age of the person is denoted by the size of the dots where it appears that the base of the plot is wider. If you squint, it kind of looks like two skinny spikes, sharper and redder at the top. It would mean that those who hadn’t done any sport at all and are older throw the shortest. Those who played baseball and are younger throw the farthest.   
 
 However, there are still many questions and issues. The spikes are far apart and don’t leverage the graphing space well. The colors are hard to discern from one another (e.g., perhaps XCountry folks throw the farthest). It doesn’t tell us how much farther one sport throws over another, the average distance, the variance, or many other interesting statistics about the data. The spikes are too skinny and compact to elucidate truly useful information.   
-![Relplot by Gender, Sport and Age](../static/visualizations tab/case study on distance/dist_relplot_with_sport_age.jpg)  
+![Relplot by Gender, Sport and Age](../static/visualizations-tab/case-study-on-distance/dist_relplot_with_sport_age.jpg)  
 
 ```python
 def scatter_plot(df):
@@ -118,7 +118,7 @@ def scatter_plot(df):
 
 :::{tab-item} Stacked Bars
 This plot shows the count of people at various distances. We can see that the male gender has a curve that looks to be a 'normal distribution'. Stacked on top of the male gender is the female gender. The stacking of the bars allows us to get an idea of the distribution of the entire sample set, but it doesn’t allow us to see how the female gender is distributed.   
-![Stacked Bar Chart](../static/visualizations tab/case study on distance/dist_stacked_bars.jpg)  
+![Stacked Bar Chart](../static/visualizations-tab/case-study-on-distance/dist_stacked_bars.jpg)  
 
 ```python
 def stacked_hist(df):
@@ -134,7 +134,7 @@ def stacked_hist(df):
 
 :::{tab-item} Sports Histogram
 This plot turned out so bad that I didn’t even attempt to fix the fact that the x-axis labels are occluded, the y-axis ranges don’t match, the color of all the bars are blue (don’t differentiate themselves), and that there are gaps in the bars. It is just ugly and upon first inspection, I knew that I didn’t want to go any further with this plot. 
-![Sport Histogram](../static/visualizations tab/case study on distance/dist_sport_hist.jpg) 
+![Sport Histogram](../static/visualizations-tab/case-study-on-distance/dist_sport_hist.jpg) 
 
 To get the bars to line up uniformly, we explicitly set the bins using `range(0, 140, 3)`. We generated a new `DataFrame` called `df_buckets` and set the height of the bars to be the count of people within that bin. This is done for us using `np.histogram`. Then, we enumerated through each sport and plotted a histogram. We set the y-axis label on each axis so that we’d know which sport that subplot was presenting. 
 
@@ -161,18 +161,18 @@ To get the bars to line up uniformly, we explicitly set the bins using `range(0,
 > ```
 :::
 
-:::
+::::
 
 ## Data by Gender
 
 It is always a good idea to get a firm idea of what the data comprises. In these next few plots we show how the data differs by gender.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Pie
 The following pie chart shows us how many men and women there are. We can see that in this (fake) study, we had more men than women likely due to some bias in how the data was collected.
 
-![Gender Pie](../static/visualizations tab/case study on distance/dist_gender_pie.png) 
+![Gender Pie](../static/visualizations-tab/case-study-on-distance/dist_gender_pie.png) 
 
 The code to generate this pie chart was the same as the more complicated pie charts below. In short, it was:  
 ```python
@@ -187,7 +187,7 @@ plt.pie(percentages, labels=percentages.index, autopct=lambda pct: f'{pct:.1f}%'
 :::{tab-item} Average
 As stated above, the most common question would be to see the average distance thrown by gender. Here we show the average along with the Standard Deviation in the data. The bar is relatively long showing that there is a good amount of variance in the data. 
 
-![Bar Chart of Average Distance by Gender](../static/visualizations tab/case study on distance/dist_bar_sd.jpg)  
+![Bar Chart of Average Distance by Gender](../static/visualizations-tab/case-study-on-distance/dist_bar_sd.jpg)  
 ```python
 # code snippet (see 'Average' tab above for more code)
 sns.barplot(data=df, x='gender', y='distance', ci='sd')
@@ -199,7 +199,7 @@ In this histogram plot we have each gender plotted, female on top of male using 
 
 The chart reveals that women are most likely to throw between 20-30 yards while men are most likely to throw between 40-50 yards. Also, women peak out at about 80 yards while men peak out around 110 with what appears to be an outlier(s) beyond 120 yards.  
 
-![Histogram](../static/visualizations tab/case study on distance/dist_hist_mvf.jpg) 
+![Histogram](../static/visualizations-tab/case-study-on-distance/dist_hist_mvf.jpg) 
 
 > **See Code**  
 > ```python
@@ -227,7 +227,7 @@ The chart reveals that women are most likely to throw between 20-30 yards while 
 
 :::{tab-item} Swarm
 This plot provides a nice visual into the distribution of distance by gender. It gives more detail into how many people are at various distances. It reveals that men have a much broader spread of distances.
-![Swarm Plot](../static/visualizations tab/case study on distance/dist_swarm.jpg) 
+![Swarm Plot](../static/visualizations-tab/case-study-on-distance/dist_swarm.jpg) 
 ```python
 def swarm_plot(df):
     df2 = df[df['sport'] == 'None']
@@ -238,17 +238,17 @@ def swarm_plot(df):
 ```
 :::
 
-:::
+::::
 
 ## Data by Sport
 
 Let’s see if we can learn how the sport impacts the distance thrown. We already saw that a line plot was horrible. However, when examining the data by gender, we saw that a histogram provided some decent data, while a swarm plot was better. Attempts at these two plots showed that we needed to do even better. And, so we moved onto the better option, a box plot.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Pie Chart
 This pie chart shows how the sports compose both the male and female genders. We can see that more women do not affiliate with any sport at all, and that women are not a part of football.
-![Sport Pie Chart by Gender](../static/visualizations tab/case study on distance/dist_pie_sport_both.png)  
+![Sport Pie Chart by Gender](../static/visualizations-tab/case-study-on-distance/dist_pie_sport_both.png)  
 
 > **See Code**  
 > ```python
@@ -291,7 +291,7 @@ This pie chart shows how the sports compose both the male and female genders. We
 :::{tab-item} Swarm Plot
 The swarm plot worked well for genders, let’s try another one to get an understanding of Distance thrown by Sport. It is a little disappointing because the points are too uniform in their distribution and I don’t come away feeling like I got any answers.  
 
-![Sport Swarm Plot](../static/visualizations tab/case study on distance/dist_swarm_sport.png) 
+![Sport Swarm Plot](../static/visualizations-tab/case-study-on-distance/dist_swarm_sport.png) 
 
 ```python
 def swarm_sport_plot(df):
@@ -307,7 +307,7 @@ def swarm_sport_plot(df):
 :::{tab-item} Distance Box Plot
 Since I wanted to get some statistical insight into each sport, I decided to go with a boxplot. In this chart, sorted by average distance thrown, we can see that the sport Baseball has a clear advantage over the rest, while No sport has a clear disadvantage. While Basketball appears to have a shorter average throwing distance than Hockey and Golf, there is a lot of variance to allow many basketball players to throw farther than most hockey players and golfers. When we look at the Age Box Plot showing Age Distribution by Sport (in the next tab) we can see that golfers had a much lower average age which likely gave them an advantage.   
 
-![Sport Box Plot](../static/visualizations tab/case study on distance/dist_sport_boxplot.jpg)   
+![Sport Box Plot](../static/visualizations-tab/case-study-on-distance/dist_sport_boxplot.jpg)   
 
 > **Note**  
 > Code for this Distance Box Plot can be seen in the next tab, Age Box Plot.
@@ -329,7 +329,7 @@ Since I wanted to get some statistical insight into each sport, I decided to go 
 :::{tab-item} Age Box Plot
 In this plot, we see how the distribution of ages was not the same across each sport. This contributes to the distance of the throwers in a particular sport. We will first show that `age` correlates to `distance` below.  
 
-![Age Box Plot](../static/visualizations tab/case study on distance/dist_age_by_sport.png)
+![Age Box Plot](../static/visualizations-tab/case-study-on-distance/dist_age_by_sport.png)
 
 > **See Code**  
 > ```python
@@ -375,26 +375,26 @@ In this plot, we see how the distribution of ages was not the same across each s
 :::{tab-item} Area Plots
 Below you’ll see two plots. First is an Area Plot that shows the count of people in each sport. You’ll see that there is a big hump around 20-30 yards because that is the distance that most people can throw. The primary "sport" contributing to that distance is "None", but that is the largest contributor overall. As the distance grows out farther, it becomes more difficult to differentiate between the sports because there are simply too few people at those great distances.   
 
-![Sport Area](../static/visualizations tab/case study on distance/dist_sport_area.png)  
+![Sport Area](../static/visualizations-tab/case-study-on-distance/dist_sport_area.png)  
 
 While the above plot provides good information, it begs a question: What **percentage** does each sport contribute at each distance? Creating a graph to answer that question took some creativity and some coding effort to _organize the data_. Essentially, we created a dataframe that represented the percentage of people representing a specific distance for each sport.  
 
-![Sport Area by Percent](../static/visualizations tab/case study on distance/dist_sport_area_perc.png)
+![Sport Area by Percent](../static/visualizations-tab/case-study-on-distance/dist_sport_area_perc.png)
 
 > **Note**  
 > If you want to see the intermediate DataFrames and the code to create the above plots, well... I’m not sharing that exactly. **BUT**, you can see virtually the same thing in the section below, "Data by Age" in the *Area of Percent* tab. Check it out!
 :::
 
-:::
+::::
 
 ## Data by Age
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Pie Chart
 The largest age groups happen to be: 38-47, then 28-37, followed by 18-27. It appears that there is a bias in the data which could skew the results of the research. Given that we will soon see that younger people throw a bit farther on average, having our data skewed a bit older makes the results less accurate overall. The number of people in the general population should get smaller as the ages go up, and surely this distribution by age does not match what we expect. This triggered another plot (Actual vs Sample) to examine more closely the age distribution relative to the actual population.    
 
-![Age Pie](../static/visualizations tab/case study on distance/dist_pie_age.png)   
+![Age Pie](../static/visualizations-tab/case-study-on-distance/dist_pie_age.png)   
 
 > **See Code**  
 > See the code for the `plot_pie` method in the section above "Data By Sport -> Pie Chart".  
@@ -418,7 +418,7 @@ Then, I generated the plots below. The red line represents the actual US populat
 
 We can see that the age distribution is pretty close to the general population except for those in the 38-47 age bracket. It also looks like we might have an underrepresentation of the following age ranges: 21-23, 30-32, and 51-53. 
 
-![Sample vs Actual](../static/visualizations tab/case study on distance/dist_age_study.png)  
+![Sample vs Actual](../static/visualizations-tab/case-study-on-distance/dist_age_study.png)  
 
 > **See the Code**  
 > In the code below, `df` is our study data, while `df_us` is the actual population data with only two columns, 'age' and 'percent'. This code makes use of `twinx()` which allows us to plot two plots on the same x-axis where the y-values are at different scales. Notice how there are two y-axis labels for each subplot.  
@@ -489,7 +489,7 @@ We can see that the age distribution is pretty close to the general population e
 :::{tab-item} Box Plot
 Here we see that the younger you are, the farther you can throw. The one exception is in the 88-99 age bracket. There we see that they are a bit better than the 78-87 year-olds. Even though the average is slightly greater than the 68-77 year-olds, the range is much smaller. This is probably due to the low numbers we have in the higher age group and is an anomaly in the data. 
 
-![Age Box Plot](../static/visualizations tab/case study on distance/dist_age_box_plots.png)   
+![Age Box Plot](../static/visualizations-tab/case-study-on-distance/dist_age_box_plots.png)   
 
 ```python
 def boxes_by_age(df):
@@ -516,7 +516,7 @@ First, the y-label goes up to 1.0, which represents 100% of people at that dista
 
 Secondly, the older participants make up a very small percentage of the people overall and they are virtually gone at 70 yards (with just a few outliers). At very short distances, the majority of people there are 58 and older. 
 
-![Area of Age Percentage at Each Distance](../static/visualizations tab/case study on distance/dist_age_area.png)   
+![Area of Age Percentage at Each Distance](../static/visualizations-tab/case-study-on-distance/dist_age_area.png)   
 
 > **See Code and Data**  
 > In the code below you’ll see that we create three different DataFrames:  
@@ -525,10 +525,10 @@ Secondly, the older participants make up a very small percentage of the people o
 > 3) A DataFrame structured identically to the pivot table, only all the values are converted to percentages of the row.  
 > 
 > **DataFrame `pivot_table`**  
-> ![DataFrame df2](../static/visualizations tab/case study on distance/dist_age_df2.jpg)   
+> ![DataFrame df2](../static/visualizations-tab/case-study-on-distance/dist_age_df2.jpg)   
 > 
 > **DataFrame: Final Table as Percentages**  
-> ![DataFrame Pivot Table](../static/visualizations tab/case study on distance/dist_age_pivot_table.jpg)  
+> ![DataFrame Pivot Table](../static/visualizations-tab/case-study-on-distance/dist_age_pivot_table.jpg)  
 > 
 > ```python
 > def create_perc_by_age_df(df):
@@ -562,18 +562,18 @@ Secondly, the older participants make up a very small percentage of the people o
 > ```
 :::
 
-:::
+::::
 
 ## Examining Distance
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Scatter
 These two plots clearly show how scattered the distance values are. The plot on the left shows how men throw farther than women. The density of the dots gets thinner above 80 years-old and beyond 100 yards.  
 
 The plot on the right gives a glimpse into how many people are in a particular sport (e.g., very few in Golf and Hockey). The colors allow one to see that the older folks, by and large, throw shorter distances. And, Baseball has a few outliers.
 
-![Distance Scatter Plots](../static/visualizations tab/case study on distance/dist_scatter.png)   
+![Distance Scatter Plots](../static/visualizations-tab/case-study-on-distance/dist_scatter.png)   
 
 > **See Code**  
 > We use Seaborn to present these plots so that we can take advantage of the named argument, `hue`. The two plots were positioned too close to each other at the start and the Sport names were overlapped on top of the plot on the left. We set the spacing using `plt.subplots_adjust`. Most of this relatively simple code is setting the titles and labels.  
@@ -599,7 +599,7 @@ The plot on the right gives a glimpse into how many people are in a particular s
 :::{tab-item} Regression
 To determine the impact of age on the throwing distance, we can do a `regplot` and calculate the `Coefficient of Determination`, which expresses how strongly a change in x impacts the change in y (and vice versa).
 
-![Distance Regression](../static/visualizations tab/case study on distance/dist_age_reg.png)    
+![Distance Regression](../static/visualizations-tab/case-study-on-distance/dist_age_reg.png)    
 
 The code is very short and simple.
 ```python
@@ -619,7 +619,7 @@ def regplot_plot(df):
 :::{tab-item} Histogram
 This plot allows us to see the total count of throwers at each distance. It looks to be a "normal distribution", but it might also be a "bimodal distribution" (which you can see more clearly in the section "Data by Gender" histogram plots above.)
 
-![Distance Histogram](../static/visualizations tab/case study on distance/dist_hist.png)    
+![Distance Histogram](../static/visualizations-tab/case-study-on-distance/dist_hist.png)    
 
 The code is very short and simple.
 ```python
@@ -634,7 +634,7 @@ def hist_chart(df):
 :::{tab-item} Cumulative Histogram
 This plot allows us to see how the longer the distance, the harder it is for someone to throw that far. It looks very much like a sigmoid curve and led me to consider finding ways to scientifically calculate the farthest anyone could possibly throw (using the same sample pool). That work will be done in the next section.   
 
-![Distance Histogram](../static/visualizations tab/case study on distance/dist_cumm_hist.png)    
+![Distance Histogram](../static/visualizations-tab/case-study-on-distance/dist_cumm_hist.png)    
 
 The code is very short and simple.
 ```python
@@ -680,7 +680,7 @@ Using the same techniques we can also show that:
 
 This last statistic could be anecdotally used to claim that women can throw as far as men. But, the majority of these graphs show how men do, on average, throw farther.
 
-![Distance KDE](../static/visualizations tab/case study on distance/dist_kde.png)   
+![Distance KDE](../static/visualizations-tab/case-study-on-distance/dist_kde.png)   
 
 > **See Code**  
 > ```python
@@ -758,13 +758,13 @@ This last statistic could be anecdotally used to claim that women can throw as f
 > ```
 :::
 
-:::
+::::
 
 ## Human Limits
 
 In this section we will attempt to discover the farthest a human being can throw a baseball. This was inspired by the Cumulative Bar Chart where we could see that the slope of the chart flattened out as the distance got farther and farther. It suggests (as does common sense), that eventually, no one else will be able to throw farther: there is a limit to how far a human being can throw a ball. _What is that distance?_  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Summary
 The shape of the curve in the Cumulative chart is Sigmoid-like (S-Curve). In this specific graph, the [asymptote](https://en.wikipedia.org/wiki/Asymptote) is at 100%. The y-value asymptote is at the percentage and not at the distance. We want to rotate the graph so that our y-value is the distance thrown and the x-axis is "time". Unfortunately, we can’t just swap the x & y axis to get this graph we want. What do we do?  
@@ -794,7 +794,7 @@ To simplify, we can fix $x_0 = 0$. The coefficients' impact the curve are as fol
 - $k$ = curve rate (how fast does the line approach the y-upper-limit)   
 
 Here is how these curves look on a graph:  
-![Sigmoid Curves](../static/visualizations tab/case study on distance/dist_sigmoid.png)
+![Sigmoid Curves](../static/visualizations-tab/case-study-on-distance/dist_sigmoid.png)
 :::
 
 :::{tab-item} Bootstrap Resamples
@@ -802,13 +802,13 @@ I picked several throwers from the full data, found the max, and had that be our
 
 Here are the four resample data sets:  
 
-![Image 1](../static/visualizations tab/case study on distance/dist_boot1_data.jpg) ![Image 2](../static/visualizations tab/case study on distance/dist_boot2_data.jpg)  
-![Image 3](../static/visualizations tab/case study on distance/dist_boot3_data.jpg) ![Image 4](../static/visualizations tab/case study on distance/dist_boot4_data.jpg)  
+![Image 1](../static/visualizations-tab/case-study-on-distance/dist_boot1_data.jpg) ![Image 2](../static/visualizations-tab/case-study-on-distance/dist_boot2_data.jpg)  
+![Image 3](../static/visualizations-tab/case-study-on-distance/dist_boot3_data.jpg) ![Image 4](../static/visualizations-tab/case-study-on-distance/dist_boot4_data.jpg)  
 
 Here are four resamples plotted along with their best fit, Sigmoid curves:  
 
-![Image 1](../static/visualizations tab/case study on distance/dist_bootstrap1.png) ![Image 2](../static/visualizations tab/case study on distance/dist_bootstrap2.png)  
-![Image 3](../static/visualizations tab/case study on distance/dist_bootstrap3.png) ![Image 4](../static/visualizations tab/case study on distance/dist_bootstrap4.png)  
+![Image 1](../static/visualizations-tab/case-study-on-distance/dist_bootstrap1.png) ![Image 2](../static/visualizations-tab/case-study-on-distance/dist_bootstrap2.png)  
+![Image 3](../static/visualizations-tab/case-study-on-distance/dist_bootstrap3.png) ![Image 4](../static/visualizations-tab/case-study-on-distance/dist_bootstrap4.png)  
 
 The y-upper-limit (asymptote) for these 4 resamples are: 149, 131, 131, 131 (respectively). The curve that appears to be the most believable is the first one with 149 yards as the upper limit of human performance.
 :::
@@ -884,7 +884,7 @@ def plot_all_4_resamples():
 ```
 :::
 
-:::
+::::
 
 # Machine Learning
 

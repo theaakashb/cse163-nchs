@@ -18,7 +18,7 @@ Let's start off by showing the benefits of showing only the contiguous United St
 Imagine that we are trying to show which states have the most electoral college votes
 and perhaps we want to emphasize that California has the most by a long shot.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 One the left, we see what many students show--the full 50 states.  
@@ -67,7 +67,7 @@ There are two ways to hide these states. One way is to eliminate them from the G
 Another way is to set some limits on the x & y axes: `ax2.set_xlim(-130, -65)`
 :::
 
-:::
+::::
 
 ## Inset Alaska & Hawaii
 Eliminating two states from the drawing isn't so great. We'd like to show Alaska and Hawaii like other maps do using an `inset`. This can be done, but it does get complicated rather quickly. The inset is a separate plot with separate arguments. When legends are shown, the size of the figure changes and the placement of the inset changes. I provide this code because it is educational to see and play with, but I recommend the method below this.  
@@ -124,7 +124,7 @@ It becomes much easier to deal with plotting the full United States if the GeoDa
 * If you do geospatial `sjoin`s, then it'll all get messed up geographically.  
 * If you want to illustrate something on the Pacific Ocean, there are states in the way!  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![election image](../static/geo_elect.jpg)
@@ -193,12 +193,12 @@ When the geometry of the GeoDataFrame is modified, the plotting code is pretty s
 * When modifying the GeoDataFrame, we used the <a href='https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.at.html' target='_blank'>`at` method</a> instead of `loc`. Using loc results in an error: "ValueError: Must have equal len keys and value when setting with an iterable".  
 :::
 
-:::
+::::
 
 ## Annotated with Table Inset
 The problem with the plot above is that it is very hard to see if there is any difference between Oregon and Nevada; the colors are just too close! To fix that we will annotate each state with the count of the votes printed onto the state's location. 
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![election image](../static/geo_elect_annotated.jpg)
@@ -282,12 +282,12 @@ There are several issues that we address in this plotting solution:
 |The dataframe of values is floating point|Use the apply method and a lambda to convert all the values to integer. There is probably another way... there always is!|
 :::
 
-:::
+::::
 
 ## Finding Obvious Correlations
 Is there a correlation between population and electoral votes? Does the size of a state in square miles correlate to the number of electoral votes? Geospatial provides only minimal insight; a scatter plot is better.  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 One the top-left, you'll see a plot representing Electoral Votes by state. Were we to plot a geospatial plot of Population, we'd see something virtually identical and therefore a correlation would be seen.  
@@ -338,12 +338,12 @@ In other sections, you can see how using Python libraries you can identify stati
 ```
 :::
 
-:::
+::::
 
 ## Correlations and Coefficient of Determination
 In this example, we create three values (A, B, C) for each state. There is a strong correlation in the data, but the geospatial plots makes it hard to see **how** they relate. See if you can spot the correlations in the geospatial plots? Notice how the plots for **'Value A'** and **'Value C'** appear to be nearly identical, yet the details of the relationship is somewhat hidden because of the scale on the colormap. Then, the scatter & line plots make it all very apparent. Read more in the **Plot Comments** and **Code Comments** tabs.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 ![Geospacial & Linear plots](../static/geo_line_correlations.jpg)
@@ -474,7 +474,7 @@ We could have customized the spacing across all the subplots by using <a href="h
 at all the focus of this discussion, we left the spacing as-is.  
 :::
 
-:::
+::::
 
 ## Cartopy
 You can make some cool plots that show the terrain of the Earth using a library called `cartopy`. 
@@ -491,7 +491,7 @@ Disadvantages:
 
 You can still do some geodataframe-looking plots. For example, the <a href="https://cse163.github.io/book/module-7-geospatial-data/lesson-20-dissolve-join/hurricane-florence/HurricanFlorence.html" target="_blank">Hurricane Florence plot</a> is replicated on Hurricane Katrina using <a href="https://scitools.org.uk/cartopy/docs/latest/gallery/lines_and_polygons/hurricane_katrina.html#sphx-glr-gallery-lines-and-polygons-hurricane-katrina-py" target="_blank">this code</a>.
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Image
 This shows a direct, "flat" Plate Carrée line between Seattle and New York as well as the curved, Geodetic line
@@ -556,4 +556,4 @@ We need to know the latitude & longitude positions of the two cities. Other than
 There is a lot to know about <a href="https://scitools.org.uk/cartopy/docs/latest/getting_started/index.html" target="_blank">Cartopy</a>. It can take a lot of time to learn (as with every library). So, be sure this library adds value and is appropriate for your task before you simply start using it.  
 :::
 
-:::
+::::

@@ -33,7 +33,7 @@ The two data types are:
 2. **Randomized Data**: The taller a person is, the more likely they are in the NBA.
 
 **Example Data**  
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Predictable
 A person is in the NBA when they are tall enough. Nothing else matters. On the right, you can see the people who are tall enough. Men need to be 81 inches tall. Women need to be 75 inches tall.  
@@ -45,7 +45,7 @@ In this data, your height provides the chances that you're in the NBA. There wil
 ![Randomized Data](../static/class_nba_rand_data.png) ![Randomized Data](../static/class_nba_rand_data_in_nba.png)
 :::
 
-:::
+::::
 
 ## The code
 There are several parameterized methods used to create the data, models, and graphs. Seeing the code can help the student understand the results as well as to reproduce similar studies.  
@@ -277,7 +277,7 @@ In other words, the True-Positive rate (the ability to correctly identify WNBA p
 
 To be Fair, you want FNR and FPR to be relatively close across all the groups. If you look at these two graphs, you'll see that FNR for Females is 92% while Males is at 0%!! This leads us to conclude that the model is **NOT FAIR** when we exclude **gender** from the features.  
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Female
 ![Female Fairness](../static/class_female_fairness.png)
@@ -287,7 +287,7 @@ To be Fair, you want FNR and FPR to be relatively close across all the groups. I
 ![Male Fairness](../static/class_male_fairness.png)  
 :::
 
-:::
+::::
 
 #### Summary
 *Feature Importance*: Each feature is given a percentage amount that reflects how much that feature is used in the Decision Tree. The sum of all the importance values will total 100%.   
@@ -301,7 +301,7 @@ Calculating *Fairness* values is important when evaluating a model.
 ## Data 2: Randomized Data Study 
 In this sub-study, we will create data that is more random. Surely not everyone who is very tall is in the NBA; they are simply more likely to be in the NBA. 
 
-:::{tab-set}
+::::{tab-set}
 
 :::{tab-item} Trial #1
 In this trial:  
@@ -372,7 +372,7 @@ This image of the Decision Tree is small and hard to read. The blue boxes predic
 Did we land a good model? Perhaps it is the best we can do, but the inability to accurately predict players in the NBA is horrible. It fails to predict 74% of the NBA women and 88% of the NBA men. That's a lot! 
 :::
 
-:::
+::::
 
 This output is generated from the `model_acc` code in the prior section. It is a bit surprising to think that the model achieved ~99% accuracy while predicting that every male will 
 
