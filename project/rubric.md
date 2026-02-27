@@ -59,7 +59,7 @@ Your final delivery will be due according to the schedule posted and will be com
 
 ## Ongoing (50)
 
-## <a name='Professionalism'></a>Professionalism (50 pts)
+## Professionalism (50 pts)
 
 This section will be ongoing through the entire project lifecycle and count towards the final grade.
 
