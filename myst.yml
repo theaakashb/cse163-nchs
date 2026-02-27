@@ -49,6 +49,7 @@ project:
         - file: lectures/neural-networks.ipynb
         - file: lectures/language-models.ipynb
         - file: lectures/large-language-models.ipynb
+        - file: lectures/fairness.ipynb
     - title: Classwork
       children:
         - file: classwork/python-fundamentals.ipynb
@@ -87,6 +88,7 @@ project:
         - file: project/rubric.md
     - title: Extras
       children:
+      - file: building.md
       - file: lectures/model-evaluation.ipynb
       - file: lectures/bias-variance-bias-and-bias.ipynb
 
