@@ -25,3 +25,33 @@
 .code-example .myst-code {
   margin: 0;
 }
+
+/* Ensure curriculum content images render as readable blocks, not inline icons. */
+main article p > img[data-canonical-url] {
+  display: block;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100%;
+  max-height: none !important;
+  margin: 0.75rem auto;
+}
+
+main article p > img[data-canonical-url] + img[data-canonical-url] {
+  margin-top: 1rem;
+}
+
+/* Add high-contrast boxes behind images with transparent regions for WCAG readability. */
+main article img[data-canonical-url] {
+  box-sizing: border-box;
+  border: 1px solid #5c5c5c;
+  border-radius: 0.375rem;
+  padding: 0.375rem;
+}
+
+html.light main article img[data-canonical-url] {
+  background-color: #111111;
+}
+
+html.dark main article img[data-canonical-url] {
+  background-color: #ffffff;
+}
