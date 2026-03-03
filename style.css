@@ -49,7 +49,7 @@ main article img[data-canonical-url] {
 }
 
 html.light main article img[data-canonical-url] {
-  background-color: #111111;
+  background-color: transparent;
 }
 
 html.dark main article img[data-canonical-url] {
