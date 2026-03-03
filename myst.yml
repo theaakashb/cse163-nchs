@@ -65,6 +65,7 @@ project:
         - file: classwork/edge-detect-duckie/edge-detection-duckie.ipynb
         - file: classwork/accessibility-simulations.ipynb
         - file: classwork/scraping2.ipynb
+        - file: classwork/cw-best-fit.ipynb
     - title: Homework
       children:
         - file: homework/processing.ipynb
